@@ -1,0 +1,248 @@
+/* header */
+
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/tron");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --background: #1e1e1e;
+  --mainColor: #666666;
+  --hoverMenu: #ffffff;
+  --hoverBtn: #ddff00;
+}
+body {
+  background: var(--background);
+}
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  height: 90px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu {
+  margin-left: auto;
+  margin-right: 50px;
+}
+.menu ul {
+  display: flex;
+  list-style: none;
+}
+.menu ul li {
+  margin: 0 15px;
+  position: relative;
+}
+.menu ul li::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -6px;
+  background: var(--hoverMenu);
+  border-radius: 99px;
+  transition: 0.4s ease-in-out;
+}
+.menu ul li:hover::before {
+  transform: scaleX(100%);
+  box-shadow: 0px -14px 20px var(--hoverBtn);
+}
+.menu ul li a {
+  text-decoration: none;
+  color: var(--mainColor);
+  transition: 0.4s ease;
+  font-weight: 500;
+}
+.menu ul li a:hover {
+  color: var(--hoverMenu);
+}
+.logo {
+  color: #666666;
+  margin-left: 80px;
+  font-family: "TRON", sans-serif;
+  font-size: 35px;
+  transition: 0.4s ease;
+}
+.logo:hover {
+  color: var(--hoverBtn);
+  text-shadow: 0px 0px 50px var(--hoverBtn);
+}
+.loginButton {
+  margin-right: 80px;
+}
+.loginButton button {
+  border: none;
+  outline: none;
+  padding: 8px 20px;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 10px;
+  transition: 0.4s ease;
+  background: rgb(36, 36, 36);
+  box-shadow: inset -2px -2px 8px rgba(0, 0, 0),
+    -3px -2px 20px rgba(0, 0, 0, 0.766);
+}
+.loginButton button:hover {
+  box-shadow: inset -2px -2px 8px rgba(0, 0, 0),
+    -3px -2px 20px rgba(0, 0, 0, 0.766), 0px 0px 25px var(--hoverBtn);
+  color: var(--hoverBtn);
+}
+.loginButton button:active {
+  scale: 1.1;
+}
+/* content */
+/* view body */
+.viewBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 80vh;
+  max-height: 100%;
+  position: relative;
+  filter: blur(15px);
+  margin-top: 30px;
+}
+.viewIn {
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  background: rgb(255, 255, 255);
+  border-radius: 30px;
+  opacity: 0.1;
+}
+
+/* contact-form */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+.contact {
+  padding: 15px;
+  width: 100%;
+  max-width: 330px;
+  height: 100%;
+
+  border-radius: 15px;
+  border: 2px solid var(--hoverMenu);
+}
+.contact h2 {
+  color: var(--mainColor);
+  text-align: center;
+  margin: 10px 0 20px 0;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.form span {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.form span input {
+  width: 100%;
+  max-width: 300px;
+  padding: 7px 0 7px 20px;
+  border-radius: 10px;
+  background: transparent;
+  color: #ffffff;
+  outline: none;
+  border: 2px solid var(--hoverMenu);
+}
+.form span i {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--hoverMenu);
+  font-size: 13px;
+}
+.contact form input::placeholder {
+  color: var(--mainColor);
+}
+.contact form input:focus {
+  border: 2px solid var(--hoverBtn);
+}
+
+.contact button {
+  padding: 8px 25px;
+  border-radius: 10px;
+  background: var(--background);
+  transition: 0.5s ease;
+  outline: none;
+  color: var(--mainColor);
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  margin-bottom: 10px;
+  box-shadow: inset -2px -2px 8px rgba(0, 0, 0),
+    -3px -2px 20px rgba(0, 0, 0, 0.766);
+}
+.contact button:hover {
+  box-shadow: inset -2px -2px 8px rgba(0, 0, 0),
+    -3px -2px 20px rgba(0, 0, 0, 0.766), 0px 0px 25px var(--hoverBtn);
+  color: var(--hoverBtn);
+}
+.contact button:active {
+  scale: 1.1;
+}
+
+/* course */
+.addCourse,
+.course {
+  width: 180px;
+  height: 90px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  background: #666666;
+}
+.learnings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.courses {
+  font-size: 25px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  background: #666666;
+  width: 200px;
+  height: 120px;
+  text-align: center;
+  align-content: center;
+}
+
+@media screen and (max-width: 900px) {
+  .loginButton {
+    display: none;
+  }
+}
+@media screen and (max-width: 730px) {
+  .menu {
+    display: none;
+  }
+  .logo {
+    margin-left: 25px;
+  }
+  .contactForm {
+    padding: 30px 10px;
+  }
+}
