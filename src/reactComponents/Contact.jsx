@@ -14,7 +14,8 @@ function Contact() {
       return;
     }
 
-    const response = await axios.post("http://localhost:5000/userdata", {
+    const api_url="https://my-manager-backend-a30q.onrender.com"
+    const response = await axios.post(`${api_url}/userdata`, {
       username: name,
       email: email,
       mobile_no: phone,
