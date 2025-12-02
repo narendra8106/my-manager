@@ -1,7 +1,6 @@
 /* header */
 
 @import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.cdnfonts.com/css/tron");
 
 * {
   padding: 0;
@@ -10,18 +9,20 @@
   font-family: "Poppins", sans-serif;
 }
 :root {
-  --background: #1e1e1e;
-  --mainColor: #666666;
-  --hoverMenu: #ffffff;
-  --hoverBtn: #ddff00;
+  --dark: #282e33; /*282e33*/
+  --main: #75777a; /*7b7f85*/
+  --light: #c1c4c8; /*c1c4c8*/
+  --background: #f5f6f7;
 }
 body {
   background: var(--background);
+  height: 200vh;
 }
 .header {
+  position: fixed;
   display: flex;
   flex-wrap: wrap;
-  height: 90px;
+  height: 80px;
   width: 100%;
   align-items: center;
   justify-content: space-between;
@@ -37,198 +38,108 @@ body {
 .menu ul li {
   margin: 0 15px;
   position: relative;
+
+  opacity: 0;
+  animation: ltr 1s calc(0.2s * var(--i)) ease forwards;
 }
 .menu ul li::before {
   content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 2px;
-  bottom: -6px;
-  background: var(--hoverMenu);
+  height: 3px;
+  bottom: -3px;
+  background: var(--dark);
   border-radius: 99px;
   transition: 0.4s ease-in-out;
 }
 .menu ul li:hover::before {
   transform: scaleX(100%);
-  box-shadow: 0px -14px 20px var(--hoverBtn);
 }
 .menu ul li a {
   text-decoration: none;
-  color: var(--mainColor);
+  color: var(--dark);
   transition: 0.4s ease;
-  font-weight: 500;
-}
-.menu ul li a:hover {
-  color: var(--hoverMenu);
+  font-weight: bolder;
 }
 .logo {
-  color: #666666;
+  color: var(--dark);
   margin-left: 80px;
-  font-family: "TRON", sans-serif;
   font-size: 35px;
-  transition: 0.4s ease;
+  font-weight: bolder;
+  transition: all 0.4s ease;
+  /* animation */
+  opacity: 0;
+  animation: ltr 1s ease forwards;
 }
 .logo:hover {
-  color: var(--hoverBtn);
-  text-shadow: 0px 0px 50px var(--hoverBtn);
+  scale: 1.1;
 }
 .loginButton {
   margin-right: 80px;
 }
 .loginButton button {
-  border: none;
+  border: 2px solid var(--dark);
+  color: var(--background);
   outline: none;
   padding: 8px 20px;
   font-weight: bold;
   font-size: 15px;
   border-radius: 10px;
   transition: 0.4s ease;
-  background: rgb(36, 36, 36);
-  box-shadow: inset -2px -2px 8px rgba(0, 0, 0),
-    -3px -2px 20px rgba(0, 0, 0, 0.766);
+  background: var(--dark);
+  cursor: pointer;
+  /* animation */
+  opacity: 0;
+  animation: rtl 1s 1.5s ease forwards;
 }
 .loginButton button:hover {
-  box-shadow: inset -2px -2px 8px rgba(0, 0, 0),
-    -3px -2px 20px rgba(0, 0, 0, 0.766), 0px 0px 25px var(--hoverBtn);
-  color: var(--hoverBtn);
+  color: var(--dark);
+  background: var(--background);
+  border: 2px solid var(--dark);
 }
 .loginButton button:active {
-  scale: 1.1;
+  background: var(--dark);
+  color: var(--background);
 }
-/* content */
-/* view body */
-.viewBody {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 80vh;
-  max-height: 100%;
-  position: relative;
-  filter: blur(15px);
-  margin-top: 30px;
+/*scroll page*/
+.header.scroll .logo {
+  color: var(--background);
 }
-.viewIn {
-  width: 90%;
-  height: 100%;
-  position: absolute;
-  background: rgb(255, 255, 255);
-  border-radius: 30px;
-  opacity: 0.1;
+.header.scroll {
+  animation: scroll 0.4s ease;
+  background: var(--dark);
 }
-
-/* contact-form */
-.contactForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 0;
-}
-.contact {
-  padding: 15px;
-  width: 100%;
-  max-width: 330px;
-  height: 100%;
-
-  border-radius: 15px;
-  border: 2px solid var(--hoverMenu);
-}
-.contact h2 {
-  color: var(--mainColor);
-  text-align: center;
-  margin: 10px 0 20px 0;
-}
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.form span {
-  position: relative;
-  margin-bottom: 20px;
-  width: 100%;
-}
-.form span input {
-  width: 100%;
-  max-width: 300px;
-  padding: 7px 0 7px 20px;
-  border-radius: 10px;
-  background: transparent;
-  color: #ffffff;
-  outline: none;
-  border: 2px solid var(--hoverMenu);
-}
-.form span i {
-  position: absolute;
-  right: 2%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--hoverMenu);
-  font-size: 13px;
-}
-.contact form input::placeholder {
-  color: var(--mainColor);
-}
-.contact form input:focus {
-  border: 2px solid var(--hoverBtn);
-}
-
-.contact button {
-  padding: 8px 25px;
-  border-radius: 10px;
+.header.scroll .loginButton button {
   background: var(--background);
-  transition: 0.5s ease;
-  outline: none;
-  color: var(--mainColor);
-  font-weight: bold;
-  font-size: 15px;
-  border: none;
-  margin-bottom: 10px;
-  box-shadow: inset -2px -2px 8px rgba(0, 0, 0),
-    -3px -2px 20px rgba(0, 0, 0, 0.766);
+  border: 2px solid var(--background);
+  color: var(--dark);
 }
-.contact button:hover {
-  box-shadow: inset -2px -2px 8px rgba(0, 0, 0),
-    -3px -2px 20px rgba(0, 0, 0, 0.766), 0px 0px 25px var(--hoverBtn);
-  color: var(--hoverBtn);
+.header.scroll .loginButton button:hover {
+  color: var(--background);
+  background: var(--dark);
+  border: 2px solid var(--background);
 }
-.contact button:active {
-  scale: 1.1;
+.header.scroll .loginButton button:active {
+  background: var(--background);
+  color: var(--dark);
+}
+.header.scroll .menu ul li a {
+  color: var(--background);
+}
+.header.scroll .menu ul li::before {
+  background: var(--background);
+}
+@keyframes scroll {
+  0% {
+    margin-top: -80px;
+  }
+  100% {
+    margin-top: 0;
+  }
 }
 
-/* course */
-.addCourse,
-.course {
-  width: 180px;
-  height: 90px;
-  font-size: 20px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  font-weight: bold;
-  background: #666666;
-}
-.learnings {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-.courses {
-  font-size: 25px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  font-weight: bold;
-  background: #666666;
-  width: 200px;
-  height: 120px;
-  text-align: center;
-  align-content: center;
-}
+/* content */
 
 @media screen and (max-width: 900px) {
   .loginButton {
@@ -242,7 +153,24 @@ body {
   .logo {
     margin-left: 25px;
   }
-  .contactForm {
-    padding: 30px 10px;
+}
+@keyframes ltr {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes rtl {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

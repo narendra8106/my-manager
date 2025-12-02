@@ -1,21 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import Header from './reactComponents/Header';
-import Contact from './reactComponents/Contact';
-import ViewBody from './reactComponents/ViewBody';
-
-
+import React, { useState, useEffect } from "react";
+import Header from "./reactComponents/Header";
 
 function App() {
-  
-  return ( 
+  return (
     <div>
-      <Header/>
-      <ViewBody/>
-      <Contact/>
-      
+      <Header />
     </div>
-   );
+  );
 }
 
 export default App;
-
