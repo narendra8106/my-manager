@@ -11,7 +11,7 @@ function Header() {
 
   return (
     <div className={scroll ? "header scroll navBG" : "header"}>
-      <div className="logo">MU</div>
+      <div className="logo">Modi</div>
       <div className="menu">
         <ul>
           <li style={{ "--i": 3 }}>
