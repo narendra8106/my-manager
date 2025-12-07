@@ -6,8 +6,8 @@ import ContactForm from "./ContactForm";
 const Forms = () => {
   return (
     <div>
-      <LoginForm />
-      {/* <RegisterForm /> */}
+      {/* <LoginForm /> */}
+      <RegisterForm />
       {/* <ContactForm /> */}
     </div>
   );
