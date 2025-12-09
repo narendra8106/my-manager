@@ -23,7 +23,8 @@ const LoginForm = ({ closeForm, openForm }) => {
     e.preventDefault();
     const res = await axios.post(
       "https://my-manager-backend-96w3.onrender.com/user/login",
-      loginData
+      loginData,
+      { withCredentials: true }
     );
     closeForm();
   };
