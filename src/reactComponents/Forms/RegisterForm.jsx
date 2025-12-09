@@ -3,15 +3,18 @@ import React, { useEffect, useRef, useState } from "react";
 
 const RegisterForm = ({ closeForm, openForm }) => {
   const formRef = useRef();
+
   useEffect(() => {
     const formClose = (e) => {
       if (formRef.current && !formRef.current.contains(e.target)) {
         closeForm();
       }
     };
+
     document.addEventListener("mousedown", formClose);
     return () => document.removeEventListener("mousedown", formClose);
   }, [closeForm]);
+
   //store form data
   const [data, setData] = useState({
     name: "",
@@ -20,15 +23,17 @@ const RegisterForm = ({ closeForm, openForm }) => {
     password: "",
     confirmPassword: "",
   });
+
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
   //subbmit form
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const { confirmPassword, ...payload } = data;
     const res = await axios.post(
       "https://my-manager-backend-96w3.onrender.com/user/register",
-      data
+      payload
     );
     closeForm();
   };

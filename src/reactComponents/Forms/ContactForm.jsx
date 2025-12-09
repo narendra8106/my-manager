@@ -24,7 +24,8 @@ const ContactForm = ({ closeForm }) => {
     e.preventDefault();
     const res = await axios.post(
       "https://my-manager-backend-96w3.onrender.com/user/contact",
-      contactData
+      contactData,
+      { withCredentials: true }
     );
     closeForm();
   };
@@ -50,7 +51,7 @@ const ContactForm = ({ closeForm }) => {
             />
             <textarea
               placeholder="enter text"
-              name="contentMessage"
+              name="contactMessage"
               onChange={handleChange}
             ></textarea>
             <button type="submit" className="button">
