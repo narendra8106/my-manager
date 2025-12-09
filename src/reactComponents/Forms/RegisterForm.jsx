@@ -72,6 +72,7 @@ const RegisterForm = ({ closeForm, openForm }) => {
             <input
               type="password"
               name="confirmPassword"
+              value={data.confirmPassword}
               placeholder="confirm password"
               onChange={handleChange}
             />
