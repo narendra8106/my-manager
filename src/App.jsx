@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "./reactComponents/Header";
-import DialogueBox from "./reactComponents/Forms/dialogueBox";
+import DialogueBox from "./reactComponents/Forms/DialogueBox";
 import LoginForm from "./reactComponents/Forms/LoginForm";
 import RegisterForm from "./reactComponents/Forms/RegisterForm";
 import ContactForm from "./reactComponents/Forms/ContactForm";
