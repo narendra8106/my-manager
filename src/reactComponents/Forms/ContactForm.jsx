@@ -1,14 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-const ContactForm = () => {
+const ContactForm = ({ closeForm }) => {
+  const formRef = useRef();
+  useEffect(() => {
+    const formClose = (e) => {
+      if (formRef.current && !formRef.current.contains(e.target)) {
+        closeForm();
+      }
+    };
+    document.addEventListener("mousedown", formClose);
+    return () => document.removeEventListener("mousedown", formClose);
+  }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    closeForm();
+  };
   return (
     <div className="form">
-      <div className="inForm">
+      <div className="inForm" ref={formRef}>
         <div className="name">
           <h2>Contact Form</h2>
         </div>
         <div className="form-inputs">
-          <form>
+          <form onSubmit={handleSubmit}>
             <input type="text" placeholder="enter your name" />
             <input type="email" placeholder="enter email" />
             <textarea placeholder="enter text"></textarea>

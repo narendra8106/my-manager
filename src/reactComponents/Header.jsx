@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-function Header() {
+
+const Header = ({ openDialogue }) => {
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
     const pageScroll = () => {
@@ -10,7 +11,7 @@ function Header() {
   }, []);
 
   return (
-    <div className={scroll ? "header scroll navBG" : "header"}>
+    <div className={scroll ? "header scroll" : "header"}>
       <div className="logo">Modi</div>
       <div className="menu">
         <ul>
@@ -29,10 +30,15 @@ function Header() {
         </ul>
       </div>
       <div className="loginButton">
-        <button type="button">LOG IN</button>
+        <button type="button" onClick={openDialogue}>
+          Join Now
+        </button>
+      </div>
+      <div className="menuIcon">
+        <i className="bi bi-view-list menuBar"></i>
       </div>
     </div>
   );
-}
+};
 
 export default Header;

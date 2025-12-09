@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
-const LoginForm = () => {
+const LoginForm = ({ closeForm, openForm }) => {
+  const formRef = useRef();
+  useEffect(() => {
+    const formClose = (e) => {
+      if (formRef.current && !formRef.current.contains(e.target)) {
+        closeForm();
+      }
+    };
+    document.addEventListener("mousedown", formClose);
+    return () => document.removeEventListener("mousedown", formClose);
+  }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    closeForm();
+  };
   return (
     <div className="form">
-      <div className="inForm">
+      <div className="inForm" ref={formRef}>
         <div className="name">
           <h2>Log In</h2>
         </div>
         <div className="form-inputs">
-          <form>
+          <form onSubmit={handleSubmit}>
             <input type="tel" name="phone" placeholder="mobile number" />
             <input
               type="password"
@@ -25,7 +39,14 @@ const LoginForm = () => {
                   <a href="#">forgot password?</a>
                 </span>
                 <span className="registertext">
-                  No A/C-<a href="#"> register</a>
+                  No A/C-
+                  <span
+                    onClick={() => {
+                      openForm("register");
+                    }}
+                  >
+                    register
+                  </span>
                 </span>
               </span>
             </div>

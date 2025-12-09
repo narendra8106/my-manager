@@ -16,7 +16,6 @@
 }
 body {
   background: var(--background);
-  height: 200vh;
 }
 .header {
   position: fixed;
@@ -63,6 +62,10 @@ body {
   transition: 0.4s ease;
   font-weight: bolder;
 }
+.menuIcon {
+  display: none;
+}
+
 .logo {
   color: var(--dark);
   margin-left: 80px;
@@ -83,7 +86,7 @@ body {
   border: 2px solid var(--dark);
   color: var(--background);
   outline: none;
-  padding: 8px 20px;
+  padding: 8px 15px;
   font-weight: bold;
   font-size: 15px;
   border-radius: 10px;
@@ -151,6 +154,15 @@ body {
 @media screen and (max-width: 730px) {
   .menu {
     display: none;
+  }
+  .menuIcon {
+    display: block;
+    font-size: 25px;
+    margin-right: 25px;
+    cursor: pointer;
+  }
+  .header.scroll .menuIcon {
+    color: var(--background);
   }
   .logo {
     margin-left: 25px;
