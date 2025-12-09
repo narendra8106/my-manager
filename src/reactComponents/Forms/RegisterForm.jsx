@@ -30,10 +30,10 @@ const RegisterForm = ({ closeForm, openForm }) => {
   //subbmit form
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { confirmPassword, ...payload } = data;
+
     const res = await axios.post(
       "https://my-manager-backend-96w3.onrender.com/user/register",
-      payload
+      data
     );
     closeForm();
   };
