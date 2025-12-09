@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import axios from "axios";
 
 const LoginForm = ({ closeForm, openForm }) => {
   const formRef = useRef();
@@ -11,8 +12,19 @@ const LoginForm = ({ closeForm, openForm }) => {
     document.addEventListener("mousedown", formClose);
     return () => document.removeEventListener("mousedown", formClose);
   }, []);
-  const handleSubmit = (e) => {
+  const [loginData, setLoginData] = useState({
+    phone: "",
+    password: "",
+  });
+  const handleChange = (e) => {
+    setLoginData({ ...loginData, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const res = await axios.post(
+      "https://my-manager-backend-96w3.onrender.com/user/login",
+      loginData
+    );
     closeForm();
   };
   return (
@@ -23,11 +35,17 @@ const LoginForm = ({ closeForm, openForm }) => {
         </div>
         <div className="form-inputs">
           <form onSubmit={handleSubmit}>
-            <input type="tel" name="phone" placeholder="mobile number" />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="mobile number"
+              onChange={handleChange}
+            />
             <input
               type="password"
               name="password"
               placeholder="enter password"
+              onChange={handleChange}
             />
             <div className="formFeatures">
               <span>

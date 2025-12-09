@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import axios from "axios";
+import React, { useEffect, useRef, useState } from "react";
 
 const RegisterForm = ({ closeForm, openForm }) => {
   const formRef = useRef();
@@ -11,8 +12,24 @@ const RegisterForm = ({ closeForm, openForm }) => {
     document.addEventListener("mousedown", formClose);
     return () => document.removeEventListener("mousedown", formClose);
   }, []);
-  const handleSubmit = (e) => {
+  //store form data
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const handleChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+  //subbmit form
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const res = await axios.post(
+      "https://my-manager-backend-96w3.onrender.com/user/register",
+      data
+    );
     closeForm();
   };
   return (
@@ -23,11 +40,32 @@ const RegisterForm = ({ closeForm, openForm }) => {
         </div>
         <div className="form-inputs">
           <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="enter your name" />
-            <input type="email" name="email" placeholder="enter email" />
-            <input type="tel" placeholder="mobile number" />
-            <input type="password" placeholder="new password" />
-            <input type="password" placeholder="confirm password" />
+            <input
+              type="text"
+              placeholder="enter your name"
+              onChange={handleChange}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="enter email"
+              onChange={handleChange}
+            />
+            <input
+              type="tel"
+              placeholder="mobile number"
+              onChange={handleChange}
+            />
+            <input
+              type="password"
+              placeholder="new password"
+              onChange={handleChange}
+            />
+            <input
+              type="password"
+              placeholder="confirm password"
+              onChange={handleChange}
+            />
             <span className="alreadyLogin">
               already have an A/C-
               <span onClick={() => openForm("login")}>Login</span>

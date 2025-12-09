@@ -157,9 +157,10 @@ body {
   }
   .menuIcon {
     display: block;
-    font-size: 25px;
+    font-size: 30px;
     margin-right: 25px;
     cursor: pointer;
+    animation: rtl 1s ease;
   }
   .header.scroll .menuIcon {
     color: var(--background);

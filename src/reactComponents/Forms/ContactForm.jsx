@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
 
 const ContactForm = ({ closeForm }) => {
   const formRef = useRef();
@@ -11,8 +12,20 @@ const ContactForm = ({ closeForm }) => {
     document.addEventListener("mousedown", formClose);
     return () => document.removeEventListener("mousedown", formClose);
   }, []);
-  const handleSubmit = (e) => {
+  const [contactData, setContactData] = useState({
+    name: "",
+    email: "",
+    contactMessage: "",
+  });
+  const handleChange = (e) => {
+    setContactData({ ...contactData, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const res = await axios.post(
+      "https://my-manager-backend-96w3.onrender.com/user/contact",
+      contactData
+    );
     closeForm();
   };
   return (
@@ -23,9 +36,20 @@ const ContactForm = ({ closeForm }) => {
         </div>
         <div className="form-inputs">
           <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="enter your name" />
-            <input type="email" placeholder="enter email" />
-            <textarea placeholder="enter text"></textarea>
+            <input
+              type="text"
+              placeholder="enter your name"
+              onChange={handleChange}
+            />
+            <input
+              type="email"
+              placeholder="enter email"
+              onChange={handleChange}
+            />
+            <textarea
+              placeholder="enter text"
+              onChange={handleChange}
+            ></textarea>
             <button type="submit" className="button">
               submit
             </button>
