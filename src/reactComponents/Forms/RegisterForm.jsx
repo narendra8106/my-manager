@@ -11,7 +11,7 @@ const RegisterForm = ({ closeForm, openForm }) => {
     };
     document.addEventListener("mousedown", formClose);
     return () => document.removeEventListener("mousedown", formClose);
-  }, []);
+  }, [closeForm]);
   //store form data
   const [data, setData] = useState({
     name: "",
@@ -42,6 +42,7 @@ const RegisterForm = ({ closeForm, openForm }) => {
           <form onSubmit={handleSubmit}>
             <input
               type="text"
+              name="name"
               placeholder="enter your name"
               onChange={handleChange}
             />
@@ -53,16 +54,19 @@ const RegisterForm = ({ closeForm, openForm }) => {
             />
             <input
               type="tel"
+              name="phone"
               placeholder="mobile number"
               onChange={handleChange}
             />
             <input
               type="password"
+              name="password"
               placeholder="new password"
               onChange={handleChange}
             />
             <input
               type="password"
+              name="confirmPassword"
               placeholder="confirm password"
               onChange={handleChange}
             />

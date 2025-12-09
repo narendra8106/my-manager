@@ -11,7 +11,7 @@ const LoginForm = ({ closeForm, openForm }) => {
     };
     document.addEventListener("mousedown", formClose);
     return () => document.removeEventListener("mousedown", formClose);
-  }, []);
+  }, [closeForm]);
   const [loginData, setLoginData] = useState({
     phone: "",
     password: "",

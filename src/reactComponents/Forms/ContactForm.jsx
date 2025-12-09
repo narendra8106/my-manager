@@ -11,7 +11,7 @@ const ContactForm = ({ closeForm }) => {
     };
     document.addEventListener("mousedown", formClose);
     return () => document.removeEventListener("mousedown", formClose);
-  }, []);
+  }, [closeForm]);
   const [contactData, setContactData] = useState({
     name: "",
     email: "",
@@ -38,16 +38,19 @@ const ContactForm = ({ closeForm }) => {
           <form onSubmit={handleSubmit}>
             <input
               type="text"
+              name="name"
               placeholder="enter your name"
               onChange={handleChange}
             />
             <input
               type="email"
+              name="email"
               placeholder="enter email"
               onChange={handleChange}
             />
             <textarea
               placeholder="enter text"
+              name="contentMessage"
               onChange={handleChange}
             ></textarea>
             <button type="submit" className="button">
