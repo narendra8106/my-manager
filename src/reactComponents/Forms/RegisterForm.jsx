@@ -23,19 +23,21 @@ const RegisterForm = ({ closeForm, openForm }) => {
     password: "",
     confirmPassword: "",
   });
-
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
   //subbmit form
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const res = await axios.post(
-      "https://my-manager-backend-96w3.onrender.com/user/register",
-      data
-    );
-    closeForm();
+    try {
+      const res = await axios.post(
+        "https://my-manager-backend-96w3.onrender.com/user/register",
+        data
+      );
+      closeForm();
+    } catch (error) {
+      setError(error.message);
+    }
   };
   return (
     <div className="form">
@@ -48,24 +50,29 @@ const RegisterForm = ({ closeForm, openForm }) => {
             <input
               type="text"
               name="name"
+              value={data.name}
               placeholder="enter your name"
               onChange={handleChange}
             />
             <input
               type="email"
               name="email"
+              value={data.email}
               placeholder="enter email"
               onChange={handleChange}
             />
+
             <input
               type="tel"
               name="phone"
+              value={data.phone}
               placeholder="mobile number"
               onChange={handleChange}
             />
             <input
               type="password"
               name="password"
+              value={data.password}
               placeholder="new password"
               onChange={handleChange}
             />

@@ -1,0 +1,55 @@
+.gradient-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.gradientBg1 {
+  width: 400px;
+  height: 200px;
+  background: linear-gradient(90deg, #00b7ff34, #e600ff38);
+  margin-left: 5%;
+  filter: blur(50px);
+  border-radius: 30% 70% 47% 53% / 0% 0% 100% 100%;
+}
+.gradientBg2 {
+  width: 75vw;
+  height: 50vh;
+  background: linear-gradient(#76f4ffa0, #d0ff005a);
+  margin-left: 70%;
+  transform: translate(-50%);
+  margin-top: 200px;
+  filter: blur(100px);
+  border-radius: 10%;
+}
+.gradientBg3 {
+  width: 300px;
+  height: 50vh;
+  background: linear-gradient(145deg, #ff7f9d8f, #ffe57389);
+  margin-left: 10%;
+  margin-top: 250px;
+  filter: blur(80px);
+  border-radius: 51% 49% 100% 0% / 83% 69% 31% 17%;
+}
+.gradientBg4 {
+  width: 50vw;
+  height: 400px;
+  background: linear-gradient(145deg, #ffe58f96, #aefffaa0);
+  margin-left: 50%;
+  margin-top: 250px;
+  filter: blur(80px);
+  border-radius: 51% 49% 100% 0% / 83% 69% 31% 17%;
+}
+.gradientBg5 {
+  width: 300px;
+  height: 400px;
+  background: linear-gradient(145deg, #7effc391, #82f3ffa6);
+  margin-left: 30%;
+  margin-top: 250px;
+  filter: blur(80px);
+  border-radius: 51% 49% 100% 0% / 83% 69% 31% 17%;
+}

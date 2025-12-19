@@ -14,18 +14,35 @@
   --light: #c1c4c8; /*c1c4c8*/
   --background: #f5f6f7;
 }
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
 body {
   background: var(--background);
 }
-.header {
+.bgHeader {
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+
+  z-index: 99;
+}
+.header {
+  width: 100%;
+  height: 100%;
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
-  height: 80px;
-  width: 100%;
   align-items: center;
   justify-content: space-between;
-  z-index: 99;
 }
 .menu {
   margin-left: auto;
@@ -38,7 +55,6 @@ body {
 .menu ul li {
   margin: 0 15px;
   position: relative;
-
   opacity: 0;
   animation: ltr 1s calc(0.2s * var(--i)) ease forwards;
 }
@@ -65,7 +81,6 @@ body {
 .menuIcon {
   display: none;
 }
-
 .logo {
   color: var(--dark);
   margin-left: 80px;
@@ -83,10 +98,10 @@ body {
   margin-right: 80px;
 }
 .loginButton button {
-  border: 2px solid var(--dark);
+  border: none;
   color: var(--background);
   outline: none;
-  padding: 8px 15px;
+  padding: 9px 15px;
   font-weight: bold;
   font-size: 15px;
   border-radius: 10px;
@@ -97,55 +112,51 @@ body {
   opacity: 0;
   animation: rtl 1s 1.5s ease forwards;
 }
+
 .loginButton button:hover {
   color: var(--dark);
-  background: var(--background);
-  border: 2px solid var(--dark);
+  background: transparent;
   box-shadow: 0px 0px 10px var(--dark);
 }
 .loginButton button:active {
   background: var(--dark);
   color: var(--background);
 }
-/*scroll page*/
-.header.scroll .logo {
-  color: var(--background);
-}
-.header.scroll {
-  animation: scroll 0.4s ease;
-  background: var(--dark);
-}
-.header.scroll .loginButton button {
-  background: var(--background);
-  border: 2px solid var(--background);
-  color: var(--dark);
-}
-.header.scroll .loginButton button:hover {
-  color: var(--background);
-  background: var(--dark);
-  border: 2px solid var(--background);
-}
-.header.scroll .loginButton button:active {
-  background: var(--background);
-  color: var(--dark);
-}
-.header.scroll .menu ul li a {
-  color: var(--background);
-}
-.header.scroll .menu ul li::before {
-  background: var(--background);
-}
-@keyframes scroll {
-  0% {
-    margin-top: -80px;
-  }
-  100% {
-    margin-top: 0;
-  }
-}
+.footer {
+  width: 100%;
+  height: auto;
+  background-color: #2f2f2fea;
 
-/* content */
-
+  display: flex;
+  justify-content: space-around;
+  padding: 60px 0;
+}
+.footer .cols {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cols h2 {
+  margin-bottom: 20px;
+  color: rgb(255, 255, 255);
+}
+.cols a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.appLogos {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  row-gap: 20px;
+  column-gap: 25px;
+}
+.copyRight {
+  width: 100%;
+  background: rgb(44, 44, 44);
+  padding: 5px 0 5px 20px;
+  color: white;
+}
 @media screen and (max-width: 900px) {
   .loginButton {
     display: none;
@@ -162,8 +173,8 @@ body {
     cursor: pointer;
     animation: rtl 1s ease;
   }
-  .header.scroll .menuIcon {
-    color: var(--background);
+  .header .menuIcon {
+    color: var(--dark);
   }
   .logo {
     margin-left: 25px;

@@ -40,18 +40,21 @@ const ContactForm = ({ closeForm }) => {
             <input
               type="text"
               name="name"
+              value={contactData.name}
               placeholder="enter your name"
               onChange={handleChange}
             />
             <input
               type="email"
               name="email"
+              value={contactData.email}
               placeholder="enter email"
               onChange={handleChange}
             />
             <textarea
               placeholder="enter text"
               name="contactMessage"
+              value={contactData.contactMessage}
               onChange={handleChange}
             ></textarea>
             <button type="submit" className="button">

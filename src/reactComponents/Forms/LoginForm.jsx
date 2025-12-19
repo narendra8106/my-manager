@@ -39,12 +39,14 @@ const LoginForm = ({ closeForm, openForm }) => {
             <input
               type="tel"
               name="phone"
+              value={loginData.phone}
               placeholder="mobile number"
               onChange={handleChange}
             />
             <input
               type="password"
               name="password"
+              value={loginData.password}
               placeholder="enter password"
               onChange={handleChange}
             />
