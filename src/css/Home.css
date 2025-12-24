@@ -1,0 +1,303 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --mainherocolor: rgb(0, 133, 113);
+  --bg: #21c1c423;
+}
+.clgName {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.hero {
+  height: auto;
+  width: 100%;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  padding: 80px 0px 70px 80px;
+  margin-bottom: 50px;
+}
+.heroBranchName {
+  font-weight: 700;
+  border: 2px solid var(--mainherocolor);
+  padding: 5px 15px;
+  border-radius: 99px;
+}
+.tag {
+  margin-bottom: 20px;
+}
+.explore h1 {
+  font-weight: 500;
+}
+.heroQuote {
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+.strongInHero {
+  color: var(--mainherocolor);
+}
+.heroTag {
+  font-size: 17px;
+  width: 70%;
+  font-weight: 300;
+  margin-bottom: 25px;
+  width: 47%;
+}
+.progress {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+.progress h1 {
+  font-weight: 300;
+}
+.progress h1 span {
+  color: var(--mainherocolor);
+  font-weight: bold;
+}
+.heroButtons {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.buttons button {
+  margin-right: 15px;
+  padding: 7px 15px;
+  border-radius: 10px;
+  border: 2px solid var(--mainherocolor);
+  background: transparent;
+  color: var(--mainherocolor);
+  transition: 0.4s ease;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+.buttons button:hover {
+  color: rgb(255, 255, 255);
+  background: var(--mainherocolor);
+}
+/* about  */
+/* ===== About Section ===== */
+.about {
+  padding: 20px;
+  text-align: center;
+}
+
+/* ===== Title ===== */
+.aboutTitle {
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+/* Highlight text */
+.hilites {
+  color: var(--mainherocolor);
+  position: relative;
+}
+
+.hilites::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #00756d, #00deb2);
+  border-radius: 2px;
+}
+
+/* ===== Subtitle ===== */
+.aboutDiscription {
+  font-size: 18px;
+  color: #475569;
+  margin-bottom: 60px;
+  font-weight: 500;
+}
+
+/* ===== Content Wrapper ===== */
+.aboutBoxes {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+/* ===== Paragraph Cards ===== */
+.about-text {
+  background: #ffffff;
+  padding: 32px 36px;
+  border-radius: 15px;
+  font-size: 17px;
+  line-height: 1.85;
+  color: #334155;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+/* Hover animation */
+.about-text:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Strong text highlight */
+.about-text strong {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* v and m  */
+.vision-mission-section {
+  padding: 90px 20px;
+}
+
+.vm-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.vm-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--mainherocolor);
+}
+
+.vm-subtitle {
+  font-size: 18px;
+  color: #475569;
+  margin: 12px 0 50px;
+}
+
+.vm-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.vm-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vm-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+.vm-card h3 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #0f172a;
+  position: relative;
+}
+
+.vm-card h3::after {
+  content: "";
+  width: 50px;
+  height: 4px;
+  background: #3b82f6;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  border-radius: 2px;
+}
+
+.vm-card p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #334155;
+}
+
+.vm-card ul {
+  padding-left: 20px;
+}
+
+.vm-card ul li {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: #334155;
+}
+
+/* Accent styles */
+.vm-card.vision {
+  border-top: 6px solid #1e40af;
+}
+
+.vm-card.mission {
+  border-top: 6px solid #06b6d4;
+}
+
+@media screen and (max-width: 900px) {
+  .about-text {
+    width: 550px;
+    min-width: 400px;
+    min-height: 250px;
+  }
+}
+@media (max-width: 768px) {
+  .about {
+    padding: 70px 16px;
+  }
+
+  .aboutDiscription {
+    font-size: 16px;
+  }
+  .progress {
+    font-size: 12px;
+    text-align: center;
+  }
+  .explore {
+    display: none;
+  }
+  .buttons {
+    display: none;
+  }
+  .hero {
+    padding: 20px;
+    margin-bottom: -10px;
+  }
+  .heroQuote {
+    font-size: 23px;
+  }
+  .heroTag {
+    width: 100%;
+  }
+  .aboutTitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .about-text {
+    padding: 26px 24px;
+    font-size: 16px;
+    width: 300px;
+    min-width: 250px;
+  }
+  .aboutDiscription {
+    margin-bottom: 20px;
+  }
+  .vm-title {
+    font-size: 22px;
+  }
+  .vision-mission-section {
+    padding: 0 10px;
+  }
+  .section-subtitle {
+    font-size: 16px;
+  }
+}
