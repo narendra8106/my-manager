@@ -1,7 +1,7 @@
 import React from "react";
-import image1 from "./src/assets/aicte_logo-01.png";
-import image2 from "./src/assets/naac A+.png";
-import image3 from "./src/assets/nba.png";
+import image1 from "../../src/assets/aicte_logo-01.png";
+import image2 from "../../src/assets/naac A+.png";
+import image3 from "../../src/assets/nba.png";
 const Footer = () => {
   return (
     <div className="webFooter">
