@@ -100,7 +100,6 @@
 .highlites {
   color: var(--mainherocolor);
   position: relative;
-  z-index: -1;
 }
 
 .hilites::after {
