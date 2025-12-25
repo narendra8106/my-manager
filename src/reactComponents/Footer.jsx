@@ -1,5 +1,7 @@
 import React from "react";
-
+import image1 from "./src/assets/aicte_logo-01.png";
+import image2 from "./src/assets/naac A+.png";
+import image3 from "./src/assets/nba.png";
 const Footer = () => {
   return (
     <div className="webFooter">
@@ -54,9 +56,9 @@ const Footer = () => {
           <h3>+91 9999999999</h3>
         </div>
         <div className="col-img">
-          <img src="./src/assets/aicte_logo-01.png" alt="AICTE approved" />
-          <img src="./src/assets/naac A+.png" alt="NAAC A+" />
-          <img src="./src/assets/nba.png" alt="NBA Accredited" />
+          <img src={image1} alt="AICTE approved" />
+          <img src={image2} alt="NAAC A+" />
+          <img src={image3} alt="NBA Accredited" />
         </div>
       </div>
       <div className="copyRight">&copy; all rights reserved by modi</div>
