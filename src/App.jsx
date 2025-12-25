@@ -57,9 +57,9 @@ function App() {
           <Route path="/more" element={<More />} />
         </Routes>
       </div>
-      {/* <div className="footerSection">
+      <div className="footerSection">
         <Footer />
-      </div> */}
+      </div>
     </>
   );
 }

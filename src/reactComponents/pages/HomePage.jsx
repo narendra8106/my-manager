@@ -40,15 +40,15 @@ const HomePage = () => {
         </div>
       </section>
       <section className="about">
-        <h1 className="aboutTitle">
+        <span className="aboutTitle">
           About <span className="hilites">Electronics & Communication</span>
-        </h1>
+        </span>
         <p className="aboutDiscription">
           Engineering the <span className="hilites">Core</span> of Modern
           Technology
         </p>
-        <div className="aboutBoxes">
-          <p class="about-text">
+        <div className="about-cards">
+          <p class="about-card">
             The
             <strong>
               {" "}
@@ -60,7 +60,7 @@ const HomePage = () => {
             technological landscape.
           </p>
 
-          <p class="about-text">
+          <p class="about-card">
             Our curriculum is aligned with industry standards and focuses on key
             areas such as digital and analog electronics, communication systems,
             signal processing, embedded systems, VLSI design, and emerging
@@ -68,7 +68,7 @@ const HomePage = () => {
             students to apply concepts to real-world challenges.
           </p>
 
-          <p class="about-text">
+          <p class="about-card">
             Supported by experienced faculty and a collaborative learning
             environment, the department encourages research, innovation,
             internships, and technical activities. We strive to develop skilled,
@@ -79,7 +79,7 @@ const HomePage = () => {
       </section>
       <section class="vision-mission-section">
         <div class="vm-container">
-          <h2 class="vm-title">Vision & Mission</h2>
+          <span class="vm-title hilites">Vision & Mission</span>
           <p class="vm-subtitle">Guiding Principles That Shape Excellence</p>
 
           <div class="vm-cards">
@@ -115,6 +115,36 @@ const HomePage = () => {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="tags-container">
+        <span className="hilites tags-title">Accreditations & Highlights</span>
+        <div className="tags-grades">
+          <span className="tags-card">
+            Established <br />
+            <span className="highlites">2008</span>{" "}
+          </span>
+          <span className="tags-card">
+            Accreditations <br />
+            <span className="highlites">NAAC A+</span>{" "}
+          </span>
+          <span className="tags-card">
+            Faculty Strength <br />
+            <span className="highlites">30+ Experienced Professors</span>
+          </span>
+          <span className="tags-card">
+            Labs & Facilities <br />
+            <span className="highlites">10+ Advanced Laboratories</span>
+          </span>
+        </div>
+      </section>
+      <section className="home-explore">
+        <span className="hilites exp-title">Join Our ECE Community</span>
+        <div className="exploreBtn">
+          <p>Register now and explore courses, labs, and latest updates.</p>
+
+          <button className="button-exp">Register</button>
+          <button className="button-exp">Log In</button>
         </div>
       </section>
     </div>

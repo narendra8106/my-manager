@@ -81,22 +81,20 @@
   background: var(--mainherocolor);
 }
 /* about  */
-/* ===== About Section ===== */
 .about {
   padding: 20px;
   text-align: center;
 }
 
-/* ===== Title ===== */
 .aboutTitle {
-  font-size: clamp(32px, 4vw, 44px);
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  margin-bottom: 12px;
+  font-size: clamp(30px, 4vw, 30px);
+  font-weight: 600;
+  color: var(--mainherocolor);
 }
 
 /* Highlight text */
-.hilites {
+.hilites,
+.highlites {
   color: var(--mainherocolor);
   position: relative;
 }
@@ -112,41 +110,35 @@
   border-radius: 2px;
 }
 
-/* ===== Subtitle ===== */
 .aboutDiscription {
   font-size: 18px;
   color: #475569;
-  margin-bottom: 60px;
   font-weight: 500;
+  line-height: 1.7;
+  margin: 20px 0;
 }
 
-/* ===== Content Wrapper ===== */
-.aboutBoxes {
-  max-width: 1100px;
-  margin: auto;
+.about-cards {
   display: flex;
-  flex-direction: column;
   gap: 30px;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
-/* ===== Paragraph Cards ===== */
-.about-text {
+.about-card {
+  flex: 1 0 300px;
+
   background: #ffffff;
-  padding: 32px 36px;
-  border-radius: 15px;
-  font-size: 17px;
-  line-height: 1.85;
-  color: #334155;
+  padding: 40px 30px;
+  border-radius: 18px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 6px solid var(--mainherocolor);
 }
 
-/* Hover animation */
 .about-text:hover {
   transform: translateY(-6px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
 }
 
 /* Strong text highlight */
@@ -157,7 +149,7 @@
 
 /* v and m  */
 .vision-mission-section {
-  padding: 90px 20px;
+  padding: 50px 20px;
 }
 
 .vm-container {
@@ -167,15 +159,16 @@
 }
 
 .vm-title {
-  font-size: 38px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--mainherocolor);
   color: var(--mainherocolor);
 }
 
 .vm-subtitle {
   font-size: 18px;
   color: #475569;
-  margin: 12px 0 50px;
+  margin: 12px;
 }
 
 .vm-cards {
@@ -233,7 +226,6 @@
   color: #334155;
 }
 
-/* Accent styles */
 .vm-card.vision {
   border-top: 6px solid #1e40af;
 }
@@ -241,7 +233,64 @@
 .vm-card.mission {
   border-top: 6px solid #06b6d4;
 }
+.tags-container {
+  max-width: 1250px;
+  margin: 50px auto;
+  text-align: center;
+}
+.tags-title {
+  font-size: clamp(25px, 4vw, 30px);
 
+  font-weight: 600;
+  color: var(--mainherocolor);
+}
+.tags-grades {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 25px 30px;
+}
+.tags-card {
+  flex: 1;
+  background: white;
+  padding: 50px;
+  border-radius: 12px;
+  border-top: 6px solid var(--mainherocolor);
+}
+.highlites {
+  font-size: 30px;
+  font-weight: 600;
+}
+.home-explore {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.exploreBtn {
+  background: var(--mainherocolor);
+  padding: 40px 0;
+  width: 70%;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+.exploreBtn p {
+  color: white;
+}
+.exp-title {
+  font-size: clamp(30px, 4vw, 30px);
+}
+.button-exp {
+  padding: 5px 15px;
+  margin: 15px 10px;
+  border-radius: 10px;
+  border: 2px solid white;
+  color: white;
+  background: transparent;
+  font-weight: 500;
+  cursor: pointer;
+}
 @media screen and (max-width: 900px) {
   .about-text {
     width: 550px;
