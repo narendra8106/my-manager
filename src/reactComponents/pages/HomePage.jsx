@@ -126,7 +126,10 @@ const HomePage = () => {
           </span>
           <span className="tags-card">
             Accreditations <br />
-            <span className="highlites">NAAC A+</span>{" "}
+            <span className="highlites">
+              NAAC A+ <br />
+              NBA
+            </span>{" "}
           </span>
           <span className="tags-card">
             Faculty Strength <br />
