@@ -31,7 +31,7 @@ const FacultyForm = ({ closeForm }) => {
     e.preventDefault();
     const res = await axios.post(
       "https://my-manager-backend-96w3.onrender.com/ece/facultyInfo",
-      contactData,
+      formData,
       { withCredentials: true }
     );
   };

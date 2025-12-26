@@ -32,7 +32,7 @@ const StudentForm = ({ closeForm }) => {
     e.preventDefault();
     const res = await axios.post(
       "https://my-manager-backend-96w3.onrender.com/ece/studentInfo",
-      contactData,
+      formData,
       { withCredentials: true }
     );
   };
