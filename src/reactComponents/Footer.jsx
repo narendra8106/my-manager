@@ -28,22 +28,22 @@ const Footer = () => {
           <h2 className="footerTitles">Follow Us</h2>
           <div className="appLogos">
             <a href="">
-              <i class="fa-brands fa-facebook-square facebook"></i>
+              <i className="fa-brands fa-facebook-square facebook"></i>
             </a>
             <a href="">
-              <i class="fa-brands fa-x-twitter twitter"></i>
+              <i className="fa-brands fa-x-twitter twitter"></i>
             </a>
             <a href="">
-              <i class="fa-brands fa-linkedin linkedin"></i>
+              <i className="fa-brands fa-linkedin linkedin"></i>
             </a>
             <a href="">
-              <i class="fa-brands fa-youtube youtube"></i>
+              <i className="fa-brands fa-youtube youtube"></i>
             </a>
             <a href="">
-              <i class="fa-brands fa-square-instagram instagram"></i>
+              <i className="fa-brands fa-square-instagram instagram"></i>
             </a>
             <a href="">
-              <i class="fa-brands fa-square-github github"></i>
+              <i className="fa-brands fa-square-github github"></i>
             </a>
           </div>
         </div>

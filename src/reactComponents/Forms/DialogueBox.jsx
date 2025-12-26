@@ -20,6 +20,8 @@ const DialogueBox = ({ closeDialogue, openForm }) => {
           Register
         </button>
         <button onClick={() => openForm("login")}>Log in</button>
+        <button onClick={() => openForm("facultyForm")}>Add Faculty</button>
+        <button onClick={() => openForm("studentForm")}>Add Student</button>
         <button className="help" onClick={() => openForm("help")}>
           Help
         </button>

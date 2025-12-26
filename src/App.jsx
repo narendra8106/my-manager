@@ -13,6 +13,8 @@ import StudentsInfo from "../src/reactComponents/pages/StudentInfo";
 import Academics from "../src/reactComponents/pages/Acadamics";
 import Anouncements from "../src/reactComponents/pages/Anouncements";
 import More from "../src/reactComponents/pages/More";
+import FacultyForm from "./reactComponents/Forms/FacultyForm";
+import StudentForm from "./reactComponents/Forms/StudentForm";
 
 function App() {
   //for dialogue box
@@ -45,6 +47,12 @@ function App() {
             <RegisterForm closeForm={closeForm} openForm={openForm} />
           )}
           {activeForm === "help" && <ContactForm closeForm={closeForm} />}
+          {activeForm === "facultyForm" && (
+            <FacultyForm closeForm={closeForm} />
+          )}
+          {activeForm === "studentForm" && (
+            <StudentForm closeForm={closeForm} />
+          )}
         </div>
       </div>
       <div className=" websiteContent">

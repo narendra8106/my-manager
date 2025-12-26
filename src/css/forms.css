@@ -22,7 +22,7 @@
 .inForm {
   padding: 50px 15px;
   width: 21%;
-  min-width: 300px;
+  min-width: 350px;
   border: none;
   border-radius: 10px;
   display: flex;
@@ -31,7 +31,7 @@
   flex-direction: column;
   position: absolute;
   box-shadow: 0px 0px 20px var(--main);
-  background: rgba(255, 255, 255, 0);
+  background: rgba(0, 0, 0, 0.648);
   backdrop-filter: blur(10px);
 }
 .form-inputs form textarea {
@@ -41,7 +41,7 @@
   padding: 7px 20px 7px 20px;
   margin-top: 10px;
   border-radius: 7px;
-  border: 2px solid var(--dark);
+  border: 2px solid var(--background);
   outline: none;
   background: transparent;
 }
@@ -61,25 +61,61 @@
   padding: 7px 20px 7px 20px;
   margin-top: 10px;
   border-radius: 7px;
-  border: 2px solid var(--dark);
+  border: 2px solid var(--background);
   background: transparent;
   outline: none;
+  color: var(--background);
+}
+.name h2 {
+  color: var(--background);
+}
+.formSelect {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 10px;
+  position: relative;
+}
+.formSelect select {
+  padding: 7px 20px 7px 20px;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 7px;
+  border: 2px solid var(--background);
+  background: transparent;
+  outline: none;
+  color: var(--background);
+}
+.dcarot1 {
+  font-size: 20px;
+  color: var(--background);
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.formSelect option {
+  background: var(--dark);
+}
+.form-inputs form input::placeholder {
+  color: var(--background);
 }
 .button {
   margin-top: 25px;
   width: 100px;
   padding: 8px 25px;
   border-radius: 7px;
-  background: var(--dark);
-  color: var(--background);
+  background: var(--background);
+  color: var(--dark);
   font-weight: bold;
   transition: 0.4s ease;
-  border: 2px solid var(--dark);
+  border: 2px solid var(--background);
   cursor: pointer;
 }
 .button:hover {
-  border: 2px solid var(--dark);
-  color: var(--dark);
+  border: 2px solid var(--background);
+  color: var(--background);
   background: transparent;
   box-shadow: 0px 0px 20px var(--main);
 }
@@ -138,7 +174,7 @@
   box-shadow: 0px 0px 15px var(--dark);
 }
 .dialogueBox button {
-  color: rgb(0, 133, 113);
+  color: rgb(0, 0, 0);
   padding: 15px 70px;
   outline: none;
   border: none;
@@ -169,5 +205,8 @@
     margin: 10px;
     width: 90%;
     min-width: 300px;
+  }
+  .dialogueBox button {
+    white-space: nowrap;
   }
 }

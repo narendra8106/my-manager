@@ -32,11 +32,14 @@ const RegisterForm = ({ closeForm, openForm }) => {
     try {
       const res = await axios.post(
         "https://my-manager-backend-96w3.onrender.com/user/register",
-        data
+        data,
+        {
+          withCredentials: true,
+        }
       );
       closeForm();
     } catch (error) {
-      setError(error.message);
+      console.log("error occured while register", error);
     }
   };
   return (

@@ -11,6 +11,8 @@ const Header = ({ openDialogue }) => {
   const closeMobileMenuBox = () => {
     setOpenMobileMenu(false);
   };
+
+  //dialoguebox
   const formRef = useRef();
 
   useEffect(() => {
@@ -40,6 +42,7 @@ const Header = ({ openDialogue }) => {
 
             <li style={{ "--i": 4 }} className="dropdown">
               <select className="selectInfo" onChange={handleSelect}>
+                <option value="/">INFORMATION</option>
                 <option value="/facultyinfo">FACULTY INFO</option>
                 <option value="/studentinfo">STUDENT INFO</option>
               </select>
@@ -96,25 +99,7 @@ const Header = ({ openDialogue }) => {
                 closeMobileMenuBox();
               }}
             >
-              register
-            </li>
-
-            <li
-              onClick={() => {
-                openDialogue();
-                closeMobileMenuBox();
-              }}
-            >
-              log in
-            </li>
-
-            <li
-              onClick={() => {
-                openDialogue();
-                closeMobileMenuBox();
-              }}
-            >
-              help
+              more
             </li>
           </ul>
         </div>

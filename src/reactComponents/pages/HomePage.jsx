@@ -48,7 +48,7 @@ const HomePage = () => {
           Technology
         </p>
         <div className="about-cards">
-          <p class="about-card">
+          <p className="about-card">
             The
             <strong>
               {" "}
@@ -60,7 +60,7 @@ const HomePage = () => {
             technological landscape.
           </p>
 
-          <p class="about-card">
+          <p className="about-card">
             Our curriculum is aligned with industry standards and focuses on key
             areas such as digital and analog electronics, communication systems,
             signal processing, embedded systems, VLSI design, and emerging
@@ -68,7 +68,7 @@ const HomePage = () => {
             students to apply concepts to real-world challenges.
           </p>
 
-          <p class="about-card">
+          <p className="about-card">
             Supported by experienced faculty and a collaborative learning
             environment, the department encourages research, innovation,
             internships, and technical activities. We strive to develop skilled,
@@ -77,13 +77,15 @@ const HomePage = () => {
           </p>
         </div>
       </section>
-      <section class="vision-mission-section">
-        <div class="vm-container">
-          <span class="vm-title hilites">Vision & Mission</span>
-          <p class="vm-subtitle">Guiding Principles That Shape Excellence</p>
+      <section className="vision-mission-section">
+        <div className="vm-container">
+          <span className="vm-title hilites">Vision & Mission</span>
+          <p className="vm-subtitle">
+            Guiding Principles That Shape Excellence
+          </p>
 
-          <div class="vm-cards">
-            <div class="vm-card vision">
+          <div className="vm-cards">
+            <div className="vm-card vision">
               <h3>Our Vision</h3>
               <p>
                 To emerge as a center of excellence in Electronics and
@@ -93,7 +95,7 @@ const HomePage = () => {
               </p>
             </div>
 
-            <div class="vm-card mission">
+            <div className="vm-card mission">
               <h3>Our Mission</h3>
               <ul>
                 <li>
@@ -145,7 +147,6 @@ const HomePage = () => {
         <span className="hilites exp-title">Join Our ECE Community</span>
         <div className="exploreBtn">
           <p>Register now and explore courses, labs, and latest updates.</p>
-
           <button className="button-exp">Register</button>
           <button className="button-exp">Log In</button>
         </div>
