@@ -24,7 +24,7 @@ const StudentForm = ({ closeForm }) => {
     academicYear: "",
     admissionType: "",
     status: "Active",
-    photo: null,
+    photo: "",
   });
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -34,7 +34,9 @@ const StudentForm = ({ closeForm }) => {
     const res = await axios.post(
       "https://my-manager-backend-96w3.onrender.com/ece/studentInfo",
       formData,
-      { withCredentials: true }
+      {
+        withCredentials: true,
+      }
     );
   };
 
