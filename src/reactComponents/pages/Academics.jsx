@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Acadamics = () => {
+const Academics = () => {
   return (
     <div className="academics">
       <Link to={"/curriculum"}>
@@ -28,4 +28,4 @@ const Acadamics = () => {
   );
 };
 
-export default Acadamics;
+export default Academics;

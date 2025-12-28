@@ -10,15 +10,15 @@ import Footer from "./reactComponents/Footer";
 import HomePage from "../src/reactComponents/pages/HomePage";
 import FacultyInfo from "../src/reactComponents/pages/FacultyInfo";
 import StudentsInfo from "../src/reactComponents/pages/StudentInfo";
-import Academics from "../src/reactComponents/pages/Acadamics";
+import Academics from "../src/reactComponents/pages/Academics";
 import Anouncements from "../src/reactComponents/pages/Anouncements";
 import More from "../src/reactComponents/pages/More";
 import FacultyForm from "./reactComponents/Forms/FacultyForm";
 import StudentForm from "./reactComponents/Forms/StudentForm";
-import Circulum from "./reactComponents/pages/adademics/Circulum";
-import Attendence from "./reactComponents/pages/adademics/attendence";
-import Marks from "./reactComponents/pages/adademics/Marks";
-import Timetable from "./reactComponents/pages/adademics/Timetable";
+import Circulum from "./reactComponents/pages/academics/Circulum";
+import Attendence from "./reactComponents/pages/academics/attendence";
+import Marks from "./reactComponents/pages/academics/Marks";
+import Timetable from "./reactComponents/pages/academics/Timetable";
 
 function App() {
   //for dialogue box
