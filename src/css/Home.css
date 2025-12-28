@@ -371,6 +371,37 @@
   font-weight: 500;
   cursor: pointer;
 }
+.academics {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px 20px;
+}
+.academics section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  padding: 70px 50px;
+  min-width: 250px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  font-size: 25px;
+  border-radius: 15px;
+  border: 2px solid rgb(0, 119, 54);
+}
+.academics a {
+  text-decoration: none;
+  color: rgb(0, 119, 54);
+}
+.academics section i {
+  font-size: 33px;
+}
 /* animations */
 @keyframes fade {
   0% {

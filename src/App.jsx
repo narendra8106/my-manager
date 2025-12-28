@@ -15,6 +15,10 @@ import Anouncements from "../src/reactComponents/pages/Anouncements";
 import More from "../src/reactComponents/pages/More";
 import FacultyForm from "./reactComponents/Forms/FacultyForm";
 import StudentForm from "./reactComponents/Forms/StudentForm";
+import Circulum from "./reactComponents/pages/adademics/Circulum";
+import Attendence from "./reactComponents/pages/adademics/attendence";
+import Marks from "./reactComponents/pages/adademics/Marks";
+import Timetable from "./reactComponents/pages/adademics/Timetable";
 
 function App() {
   //for dialogue box
@@ -63,6 +67,10 @@ function App() {
           <Route path="/academics" element={<Academics />} />
           <Route path="/anouncements" element={<Anouncements />} />
           <Route path="/more" element={<More />} />
+          <Route path="/curriculum" element={<Circulum />} />
+          <Route path="/attendence" element={<Attendence />} />
+          <Route path="/marks" element={<Marks />} />
+          <Route path="/timetable" element={<Timetable />} />
         </Routes>
       </div>
       <div className="footerSection">
