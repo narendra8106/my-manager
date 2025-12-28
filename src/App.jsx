@@ -10,15 +10,15 @@ import Footer from "./reactComponents/Footer";
 import HomePage from "../src/reactComponents/pages/HomePage";
 import FacultyInfo from "../src/reactComponents/pages/FacultyInfo";
 import StudentsInfo from "../src/reactComponents/pages/StudentInfo";
-import Academics from "../src/reactComponents/pages/Academics";
 import Anouncements from "../src/reactComponents/pages/Anouncements";
 import More from "../src/reactComponents/pages/More";
 import FacultyForm from "./reactComponents/Forms/FacultyForm";
 import StudentForm from "./reactComponents/Forms/StudentForm";
-import Circulum from "./reactComponents/pages/academics/Circulum";
-import Attendence from "./reactComponents/pages/academics/attendence";
-import Marks from "./reactComponents/pages/academics/Marks";
-import Timetable from "./reactComponents/pages/academics/Timetable";
+import Academics from "./reactComponents/pages/Academics";
+import Curriculum from "./reactComponents/pages/academicfiles/Curriculum";
+import Attendence from "./reactComponents/pages/academicfiles/Attendence";
+import Marks from "./reactComponents/pages/academicfiles/Marks";
+import Timetable from "./reactComponents/pages/academicfiles/Timetable";
 
 function App() {
   //for dialogue box
@@ -67,7 +67,7 @@ function App() {
           <Route path="/academics" element={<Academics />} />
           <Route path="/anouncements" element={<Anouncements />} />
           <Route path="/more" element={<More />} />
-          <Route path="/curriculum" element={<Circulum />} />
+          <Route path="/curriculum" element={<Curriculum />} />
           <Route path="/attendence" element={<Attendence />} />
           <Route path="/marks" element={<Marks />} />
           <Route path="/timetable" element={<Timetable />} />
