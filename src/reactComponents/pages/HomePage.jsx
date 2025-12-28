@@ -2,10 +2,20 @@ import React from "react";
 import "../../css/Home.css";
 
 const HomePage = () => {
+  const date = new Date();
   return (
     <div className="home">
+      <section className="marquee">
+        <marquee behavior="scroll" direction="rtl">
+          <p className="marq">
+            NRI Institute of Technology Autonomus | AICTE | NAAC A+ | NBA |
+            Electronics and Communication Engineering
+          </p>
+        </marquee>
+      </section>
       <section className="hero">
         <div className="clgName">NRI Institute of Technology</div>
+        <h2 className="heroAcr">AUTONOMOUS | NAAC A+ | NBA</h2>
         <div className="tag">
           <span className="heroBranchName">ECE Department</span>
         </div>

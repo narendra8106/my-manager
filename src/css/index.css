@@ -170,7 +170,7 @@ body {
 .footer {
   width: 100%;
   height: auto;
-  background-color: rgb(184, 255, 235);
+  background-color: rgba(184, 255, 235, 0.474);
   padding: 60px 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -310,10 +310,11 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 25px;
-  margin-bottom: 30px;
+  margin: 30px 0;
+  padding: 0 13px;
 }
 .infoCard {
-  max-width: 280px;
+  max-width: 300px;
   width: 90%;
   padding: 25px 20px;
   background: var(--card);
@@ -325,7 +326,7 @@ body {
 }
 .activeTag {
   padding: 2px 8px;
-  background: green;
+  background: rgb(0, 104, 50);
   color: white;
   border-radius: 10px;
   font-size: 0.85rem;
@@ -336,7 +337,7 @@ body {
 }
 .addmissionType {
   padding: 2px 8px;
-  background: green;
+  background: rgb(0, 104, 50);
   color: white;
   border-radius: 10px;
   font-size: 0.85rem;
