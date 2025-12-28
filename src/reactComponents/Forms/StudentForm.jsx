@@ -38,6 +38,7 @@ const StudentForm = ({ closeForm }) => {
         withCredentials: true,
       }
     );
+    closeForm();
   };
 
   return (

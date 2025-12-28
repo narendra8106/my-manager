@@ -37,6 +37,7 @@ const FacultyForm = ({ closeForm }) => {
         withCredentials: true,
       }
     );
+    closeForm();
   };
   return (
     <div className="form">
