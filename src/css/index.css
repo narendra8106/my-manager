@@ -311,7 +311,7 @@ body {
   flex-wrap: wrap;
   gap: 25px;
   margin: 30px 20px;
-  padding: 0 13px;
+  padding: 20px 13px;
 }
 .infoCard {
   max-width: 300px;
