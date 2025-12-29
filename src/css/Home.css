@@ -150,18 +150,18 @@
 }
 .about-card:nth-child(3) {
   animation: ltr 1s ease forwards;
-  animation-timeline: view(30%);
-  animation-range: entry 10% cover 40%;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
 }
 .about-card:nth-child(2) {
   animation: fade 1s ease forwards;
-  animation-timeline: view(30%);
-  animation-range: entry 10% cover 40%;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
 }
 .about-card:nth-child(1) {
   animation: rtl 1s ease forwards;
-  animation-timeline: view(30%);
-  animation-range: entry 10% cover 40%;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
 }
 .heroAcr {
   animation: ltr 1s ease forwards;
@@ -223,13 +223,13 @@
 }
 .vm-card:nth-child(1) {
   animation: ltr 1s ease forwards;
-  animation-timeline: view(30%);
-  animation-range: entry 10% cover 40%;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
 }
 .vm-card:nth-child(2) {
   animation: rtl 1s ease forwards;
-  animation-timeline: view(30%);
-  animation-range: entry 10% cover 40%;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
 }
 .vm-card {
   opacity: 0;
@@ -315,23 +315,23 @@
 }
 .tags-card:nth-child(1) {
   animation: ltr 0.7s ease forwards;
-  animation-timeline: view(30%);
-  animation-range: entry 10% cover 40%;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
 }
 .tags-card:nth-child(2) {
   animation: ltr 0.7s ease forwards;
-  animation-timeline: view(30%);
-  animation-range: entry 10% cover 40%;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
 }
 .tags-card:nth-child(3) {
   animation: rtl 0.7s ease forwards;
-  animation-timeline: view(30%);
-  animation-range: entry 10% cover 40%;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
 }
 .tags-card:nth-child(4) {
   animation: rtl 0.7s ease forwards;
-  animation-timeline: view(30%);
-  animation-range: entry 10% cover 40%;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
 }
 .highlites {
   font-size: 30px;
@@ -352,8 +352,8 @@
   border-radius: 10px;
   opacity: 0;
   animation: fade 1s ease forwards;
-  animation-timeline: view(30%);
-  animation-range: entry 10% cover 40%;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
 }
 .exploreBtn p {
   color: white;

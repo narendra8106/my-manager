@@ -33,6 +33,10 @@ const FacultyInfo = () => {
         <div className="infoCards">
           {facultyData.map((faculty) => (
             <div key={faculty._id} className="infoCard">
+              <img
+                src={`https://my-manager-backend-96w3.onrender.com/${faculty.photo}`}
+                alt={faculty.name}
+              />
               <h2>{faculty.name}</h2>
               <span>{faculty.designation}</span>
               <span>{faculty.department}</span>
