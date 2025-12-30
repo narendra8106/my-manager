@@ -25,7 +25,7 @@ const StudentForm = ({ closeForm }) => {
     email: "",
     phone: "",
     academicYear: "",
-    admissionType: "",
+    admissionType: "Convener",
     status: "Active",
     photo: null,
   });
