@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
+axios.defaults.baseURL = "https://my-manager-backend-96w3.onrender.com";
+axios.defaults.withCredentials = true;
+// axios.defaults.baseURL = "http://localhost:7878";
 
 const FacultyForm = ({ closeForm }) => {
   const formRef = useRef();
@@ -26,19 +29,41 @@ const FacultyForm = ({ closeForm }) => {
     photo: null,
   });
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value, files } = e.target;
+
+    if (name === "photo") {
+      setFormData({ ...formData, photo: files[0] });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post(
-      "https://my-manager-backend-96w3.onrender.com/ece/facultyInfo",
-      formData,
-      {
-        withCredentials: true,
-      }
-    );
-    closeForm();
+
+    const data = new FormData();
+
+    data.append("name", formData.name);
+    data.append("designation", formData.designation);
+    data.append("department", formData.department);
+    data.append("email", formData.email);
+    data.append("phone", formData.phone);
+    data.append("qualification", formData.qualification);
+    data.append("dateofjoining", formData.dateofjoining);
+    data.append("status", formData.status);
+    data.append("photo", formData.photo);
+
+    try {
+      await axios.post("/ece/facultyInfo", data);
+      closeForm();
+    } catch (error) {
+      console.error({
+        message: "upload failed",
+        error: error.response?.data || error.message,
+      });
+    }
   };
+
   return (
     <div className="form">
       <div className="inForm" ref={formRef}>
@@ -107,7 +132,6 @@ const FacultyForm = ({ closeForm }) => {
 
             <input
               name="photo"
-              value={formData.photo}
               type="file"
               accept="image/*"
               onChange={handleChange}

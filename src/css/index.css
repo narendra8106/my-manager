@@ -310,19 +310,30 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 25px;
-  margin: 30px 20px;
-  padding: 20px 13px;
+  padding: 25px 15px;
 }
 .infoCard {
   max-width: 300px;
   width: 90%;
-  padding: 25px 20px;
   background: var(--card);
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   min-height: 270px;
+  overflow: hidden;
   position: relative;
+  border: 3px solid rgb(0, 104, 50);
+}
+.infoCard img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 280px;
+}
+.fDetails,
+.sDetails {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 .activeTag {
   padding: 2px 8px;
@@ -331,9 +342,7 @@ body {
   border-radius: 10px;
   font-size: 0.85rem;
   white-space: nowrap;
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
+  margin-top: 10px;
 }
 .addmissionType {
   padding: 2px 8px;
@@ -342,9 +351,6 @@ body {
   border-radius: 10px;
   font-size: 0.85rem;
   white-space: nowrap;
-  position: absolute;
-  bottom: 20px;
-  left: 90px;
 }
 
 .infoCard span,

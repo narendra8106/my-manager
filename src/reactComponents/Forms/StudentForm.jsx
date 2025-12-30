@@ -1,5 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
+axios.defaults.baseURL = "https://my-manager-backend-96w3.onrender.com";
+axios.defaults.withCredentials = true;
+// axios.defaults.baseURL = "http://localhost:7878";
 
 const StudentForm = ({ closeForm }) => {
   const formRef = useRef();
@@ -24,21 +27,39 @@ const StudentForm = ({ closeForm }) => {
     academicYear: "",
     admissionType: "",
     status: "Active",
-    photo: "",
+    photo: null,
   });
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, files, value } = e.target;
+    if (name === "photo") {
+      setFormData({ ...formData, [name]: files[0] });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post(
-      "https://my-manager-backend-96w3.onrender.com/ece/studentInfo",
-      formData,
-      {
-        withCredentials: true,
-      }
-    );
+    const data = new FormData();
+    data.append("name", formData.name);
+    data.append("registerNumber", formData.registerNumber);
+    data.append("department", formData.department);
+    data.append("section", formData.section);
+    data.append("email", formData.email);
+    data.append("phone", formData.phone);
+    data.append("academicYear", formData.academicYear);
+    data.append("admissionType", formData.admissionType);
+    data.append("status", formData.status);
+    data.append("photo", formData.photo);
     closeForm();
+    try {
+      await axios.post("/ece/studentInfo", data);
+      closeForm();
+    } catch (error) {
+      console.error({
+        message: "upload failed",
+        error: error.response?.data || error.message,
+      });
+    }
   };
 
   return (
@@ -121,7 +142,6 @@ const StudentForm = ({ closeForm }) => {
 
             <input
               name="photo"
-              value={formData.photo}
               type="file"
               accept="image/*"
               onChange={handleChange}

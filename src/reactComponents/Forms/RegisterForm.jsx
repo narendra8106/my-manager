@@ -1,5 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
+axios.defaults.baseURL = "https://my-manager-backend-96w3.onrender.com";
+axios.defaults.withCredentials = true;
+// axios.defaults.baseURL = "http://localhost:7878";
 
 const RegisterForm = ({ closeForm, openForm }) => {
   const formRef = useRef();
@@ -30,13 +33,7 @@ const RegisterForm = ({ closeForm, openForm }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "https://my-manager-backend-96w3.onrender.com/user/register",
-        data,
-        {
-          withCredentials: true,
-        }
-      );
+      const res = await axios.post("/user/register", data);
       closeForm();
     } catch (error) {
       console.log("error occured while register", error);

@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+axios.defaults.baseURL = "https://my-manager-backend-96w3.onrender.com";
+axios.defaults.withCredentials = true;
+// axios.defaults.baseURL = "http://localhost:7878";
 
 const ContactForm = ({ closeForm }) => {
   const formRef = useRef();
@@ -22,11 +25,7 @@ const ContactForm = ({ closeForm }) => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post(
-      "https://my-manager-backend-96w3.onrender.com/user/contact",
-      contactData,
-      { withCredentials: true }
-    );
+    const res = await axios.post("/user/contact", contactData);
     closeForm();
   };
   return (
