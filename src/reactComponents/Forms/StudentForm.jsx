@@ -32,7 +32,7 @@ const StudentForm = ({ closeForm }) => {
   const handleChange = (e) => {
     const { name, files, value } = e.target;
     if (name === "photo") {
-      setFormData({ ...formData, [name]: files[0] });
+      setFormData({ ...formData, photo: files[0] });
     } else {
       setFormData({ ...formData, [name]: value });
     }
